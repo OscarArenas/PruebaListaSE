@@ -32,7 +32,7 @@ public class ListaSE {
         n = 0;
     }
 
-    public boolean agregar(double dato) {
+    public void agregar(double dato) {
         Nodo nuevoNodo = new Nodo(dato);
 
         if (primerNodo != null) {
@@ -43,36 +43,6 @@ public class ListaSE {
 
         ultimoNodo = nuevoNodo;
         n++;
-        return true;
-    }
-
-    public boolean agregar(int indice, double valor) {
-        if (indice >= 0 && indice <= n) {
-            if (indice == n) {
-                return agregar(valor);
-            } else {
-                Nodo actual = primerNodo;
-                Nodo anterior = null;
-                int i = 0;
-
-                while (i < indice) {
-                    i++;
-                    anterior = actual;
-                    actual = actual.siguiente;
-                }
-                Nodo nuevoNodo = new Nodo(valor, actual);
-
-                if (anterior == null) {
-                    primerNodo = nuevoNodo;
-                } else {
-                    anterior.siguiente = nuevoNodo;
-                }
-
-                n++;
-                return true;
-            }
-        }
-        return false;
     }
 
     public boolean eliminar(double dato) {

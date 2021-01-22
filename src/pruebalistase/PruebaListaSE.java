@@ -38,16 +38,11 @@ public class PruebaListaSE {
         System.out.println("ListaSE:");
         System.out.println(listaSE);
 
-        listaSE.eliminar(72.0);
-        listaSE.eliminar(45.0);
-        listaSE.eliminar(12.0);
+        listaSE.eliminar(72);
+        listaSE.eliminar(37);
+        listaSE.eliminar(45);
 
         System.out.println("ListaSE después de borrar:");
-        System.out.println(listaSE);
-
-        listaSE.agregar(1, 457);
-
-        System.out.println("ListaSE después de agregar:");
         System.out.println(listaSE);
     }
 }
