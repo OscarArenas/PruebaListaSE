@@ -45,28 +45,25 @@ public class ListaSE {
         n++;
     }
 
-    public boolean eliminar(double dato) {
-        if (primerNodo != null) {
+    public boolean eliminar(int indice) {
+        if (indice >= 0 && indice < n) {
             Nodo actual = primerNodo;
             Nodo anterior = null;
 
-            while (actual != null && actual.dato != dato) {
+            while (indice-- > 0) {
                 anterior = actual;
                 actual = actual.siguiente;
             }
-
-            if (actual != null) {
-                if (anterior == null) {
-                    primerNodo = actual.siguiente;
-                } else {
-                    anterior.siguiente = actual.siguiente;
-                }
-                if (actual == ultimoNodo) {
-                    ultimoNodo = anterior;
-                }
-                n--;
-                return true;
+            if (anterior == null) {
+                primerNodo = actual.siguiente;
+            } else {
+                anterior.siguiente = actual.siguiente;
             }
+            if (actual == ultimoNodo) {
+                ultimoNodo = anterior;
+            }
+            n--;
+            return true;
         }
         return false;
     }
