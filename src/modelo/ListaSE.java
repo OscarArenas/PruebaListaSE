@@ -46,28 +46,6 @@ public class ListaSE {
     }
 
     public boolean eliminar(double dato) {
-        if (primerNodo != null) {
-            Nodo actual = primerNodo;
-            Nodo anterior = null;
-
-            while (actual != null && actual.dato != dato) {
-                anterior = actual;
-                actual = actual.siguiente;
-            }
-
-            if (actual != null) {
-                if (anterior == null) {
-                    primerNodo = actual.siguiente;
-                } else {
-                    anterior.siguiente = actual.siguiente;
-                }
-                if (actual == ultimoNodo) {
-                    ultimoNodo = anterior;
-                }
-                n--;
-                return true;
-            }
-        }
         return false;
     }
 
