@@ -1,8 +1,8 @@
 # Carpetas
 build/
 dist/
+nbproject/private/
 
-nbproject/private/private.xml
 
 # Compiled class file
 *.class
