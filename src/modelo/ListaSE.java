@@ -80,12 +80,22 @@ public class ListaSE {
             Nodo actual = primerNodo;
 
             while (actual.siguiente != null) {
-                cadena = cadena + actual.dato + ", ";
+                cadena = cadena + realACadena(actual.dato) + ", ";
                 actual = actual.siguiente;
             }
-            cadena = cadena + actual.dato;
+            cadena = cadena + realACadena(actual.dato);
         }
 
         return "[" + cadena + "]";
+    }
+    
+    private String realACadena(double real) {
+        int entero = (int) real;
+        String cadena = real + "";
+
+        if (real == entero) {
+            cadena = entero + "";
+        }
+        return cadena;
     }
 }
